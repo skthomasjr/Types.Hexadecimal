@@ -10,7 +10,7 @@
 Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system.
 
 Hex supports implicit and explicit casts to the following types:
-- Byte`[`] (byte`[`])
+- Byte\[\] (byte\[\])
 - String (string)
 - Int16 (short)
 - Int32 (int)
@@ -24,7 +24,7 @@ Hex hex = 175; // 0xaf
 Hex supports add(+) and subtract(-) operation with the following types:
 - Hex
 - String (string)
-- Byte`[`] (byte`[`])
+- Byte\[\] (byte\[\])
 - Byte (byte)
 - Int16 (short)
 - Int32 (int)
