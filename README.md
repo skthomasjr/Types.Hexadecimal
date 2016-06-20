@@ -16,7 +16,11 @@ HexByte supports implicit and explicit casts to the following types:
 - Int32 (int)
 - Int64 (long)
 - BigInteger
-
+```c#
+HexByte hexByte = "af"; // 0xaf
+// or
+HexByte hexByte = 175; // 0xaf
+```
 HexByte supports add(+) and subtract(-) operation with the following types:
 - Byte (byte)
 - String (string)
@@ -24,7 +28,11 @@ HexByte supports add(+) and subtract(-) operation with the following types:
 - Int32 (int)
 - Int64 (long)
 - BigInteger
-
+```c#
+var hexByte = (HexByte)"af" - 1; // 0xae
+// or
+var hexByte = (HexByte)175 + 1; // 0xb0
+```
 Hex supports implicit and explicit casts to the following types:
 - Byte\[\] (byte\[\])
 - String (string)
@@ -33,9 +41,9 @@ Hex supports implicit and explicit casts to the following types:
 - Int64 (long)
 - BigInteger
 ```c#
-Hex hex = "af"; // 0xaf
+Hex hex = "afaf"; // 0xaf, 0xaf
 // or
-Hex hex = 175; // 0xaf
+Hex hex = 44975; // 0xaf, 0xaf
 ```
 Hex supports add(+) and subtract(-) operation with the following types:
 - Hex
@@ -47,7 +55,7 @@ Hex supports add(+) and subtract(-) operation with the following types:
 - Int64 (long)
 - BigInteger
 ```c#
-var hex = (Hex)"af" - 1; // 0xae
+var hex = (Hex)"afaf" - 1; // 0xaf, 0xae
 // or
-var hex = (Hex)175 + 1; // 0xb0
+var hex = (Hex)44975 + 1; // 0xaf, 0xb0
 ```
