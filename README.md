@@ -9,6 +9,22 @@
 
 Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system.
 
+HexByte supports implicit and explicit casts to the following types:
+- Byte (byte)
+- String (string)
+- Int16 (short)
+- Int32 (int)
+- Int64 (long)
+- BigInteger
+
+HexByte supports add(+) and subtract(-) operation with the following types:
+- Byte (byte)
+- String (string)
+- Int16 (short)
+- Int32 (int)
+- Int64 (long)
+- BigInteger
+
 Hex supports implicit and explicit casts to the following types:
 - Byte\[\] (byte\[\])
 - String (string)
