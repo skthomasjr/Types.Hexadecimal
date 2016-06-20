@@ -16,6 +16,12 @@ Hex supports implicit and explicit casts to the following types:
 - Int32 (int)
 - Int64 (long)
 - BigInteger
+```c#
+Hex hex = "af"; // 0xaf
+or
+Hex hex = 175; // 0xaf
+```
+
 
 Hex supports add(+) and subtract(-) operation with the following types:
 - Hex
