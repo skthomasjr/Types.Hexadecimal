@@ -18,7 +18,7 @@ Hex supports implicit and explicit casts to the following types:
 - BigInteger
 ```c#
 Hex hex = "af"; // 0xaf
-  // or
+// or
 Hex hex = 175; // 0xaf
 ```
 Hex supports add(+) and subtract(-) operation with the following types:
@@ -32,6 +32,6 @@ Hex supports add(+) and subtract(-) operation with the following types:
 - BigInteger
 ```c#
 var hex = (Hex)"af" - 1; // 0xae
-  // or
+// or
 var hex = (Hex)175 + 1; // 0xb0
 ```
