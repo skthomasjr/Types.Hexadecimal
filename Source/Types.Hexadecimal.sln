@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Types.Hexadecimal.Net45", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Types.Hexadecimal.Net40", "Types.Hexadecimal.Net40\Types.Hexadecimal.Net40.csproj", "{DD25D35B-CDFC-46D9-AEF1-FD47AF1F9749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Types.Hexadecimal.SampleConsole", "Types.Hexadecimal.SampleConsole\Types.Hexadecimal.SampleConsole.csproj", "{C229C56D-EB2C-491A-8879-F8989DF596C4}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Types.Hexadecimal\Types.Hexadecimal.projitems*{45193ac6-6fff-49ef-a3d7-a1e26d96709c}*SharedItemsImports = 4
@@ -42,6 +44,10 @@ Global
 		{DD25D35B-CDFC-46D9-AEF1-FD47AF1F9749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD25D35B-CDFC-46D9-AEF1-FD47AF1F9749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD25D35B-CDFC-46D9-AEF1-FD47AF1F9749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C229C56D-EB2C-491A-8879-F8989DF596C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C229C56D-EB2C-491A-8879-F8989DF596C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C229C56D-EB2C-491A-8879-F8989DF596C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C229C56D-EB2C-491A-8879-F8989DF596C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

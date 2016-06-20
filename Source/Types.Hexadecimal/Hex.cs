@@ -13,7 +13,7 @@ namespace Types.HexByte
     /// <summary>
     ///     Represents a static string of <see cref="HexByte" />.
     /// </summary>
-    public struct Hex
+    public struct Hex : IComparable, IComparable<Hex>, IEquatable<Hex>, IConvertible
     {
         #region fields and constants
 
@@ -127,6 +127,27 @@ namespace Types.HexByte
         }
 
         /// <summary>
+        ///     Determines if two Hex objects are equal.
+        /// </summary>
+        /// <param name="obj">The other object.</param>
+        /// <returns><c>true</c> if the objects are equal, <c>false</c> otherwise.</returns>
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Hex)) return false;
+
+            return data == ((Hex) obj).data;
+        }
+
+        /// <summary>
+        ///     Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        public override int GetHashCode()
+        {
+            return data.GetHashCode();
+        }
+
+        /// <summary>
         ///     Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string" /> that represents this instance.</returns>
@@ -146,6 +167,201 @@ namespace Types.HexByte
             {
                 yield return hexByte;
             }
+        }
+
+        /// <summary>
+        ///     Returns a <see cref="BigInteger" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="BigInteger" /> that represents this instance.</returns>
+        [Pure]
+        public BigInteger ToBigInteger()
+        {
+            return (BigInteger) this;
+        }
+
+        /// <summary>
+        ///     Returns an array of <see cref="Byte" /> that represents this instance.
+        /// </summary>
+        /// <returns>An array of <see cref="Byte" /> that represents this instance.</returns>
+        [Pure]
+        public byte[] ToByteArray()
+        {
+            return data.Select(b => (byte) b).ToArray();
+        }
+
+        /// <summary>
+        ///     Returns an array of <see cref="HexByte" /> that represents this instance.
+        /// </summary>
+        /// <returns>An array of <see cref="HexByte" /> that represents this instance.</returns>
+        [Pure]
+        public HexByte[] ToHexByteArray()
+        {
+            return data;
+        }
+
+        /// <summary>
+        ///     Returns a <see cref="Int32" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="Int32" /> that represents this instance.</returns>
+        [Pure]
+        public int ToInt32()
+        {
+            return (int) this;
+        }
+
+        /// <summary>
+        ///     Returns a <see cref="Int64" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="Int64" /> that represents this instance.</returns>
+        [Pure]
+        public long ToInt64()
+        {
+            return (long) this;
+        }
+
+        #endregion
+
+        #region implementations for IComparable
+
+        /// <exclude />
+        int IComparable.CompareTo(object value)
+        {
+            if (value == null) return 1;
+
+            if (!(value is Hex)) throw new ArgumentException("The comparison argument must be a Hex.");
+
+            return ((BigInteger) this).CompareTo(value);
+        }
+
+        #endregion
+
+        #region implementations for IComparable<Hex>
+
+        /// <exclude />
+        int IComparable<Hex>.CompareTo(Hex value)
+        {
+            return ((BigInteger) this).CompareTo(value);
+        }
+
+        #endregion
+
+        #region implementations for IConvertible
+
+        /// <exclude />
+        [Pure]
+        TypeCode IConvertible.GetTypeCode()
+        {
+            return TypeCode.Object;
+        }
+
+        /// <exclude />
+        bool IConvertible.ToBoolean(IFormatProvider provider)
+        {
+            throw new InvalidCastException("A cast of Hex to/from Boolean is invalid.");
+        }
+
+        /// <exclude />
+        char IConvertible.ToChar(IFormatProvider provider)
+        {
+            throw new InvalidCastException("A cast of Hex to/from Char is invalid.");
+        }
+
+        /// <exclude />
+        sbyte IConvertible.ToSByte(IFormatProvider provider)
+        {
+            throw new InvalidCastException("A cast of Hex to/from SByte is invalid.");
+        }
+
+        /// <exclude />
+        byte IConvertible.ToByte(IFormatProvider provider)
+        {
+            throw new InvalidCastException("A cast of Hex to/from Byte is invalid.");
+        }
+
+        /// <exclude />
+        short IConvertible.ToInt16(IFormatProvider provider)
+        {
+            return Convert.ToInt16((short) this);
+        }
+
+        /// <exclude />
+        ushort IConvertible.ToUInt16(IFormatProvider provider)
+        {
+            return Convert.ToUInt16((short) this);
+        }
+
+        /// <exclude />
+        int IConvertible.ToInt32(IFormatProvider provider)
+        {
+            return Convert.ToInt32((int) this);
+        }
+
+        /// <exclude />
+        uint IConvertible.ToUInt32(IFormatProvider provider)
+        {
+            return Convert.ToUInt32((int) this);
+        }
+
+        /// <exclude />
+        long IConvertible.ToInt64(IFormatProvider provider)
+        {
+            return Convert.ToInt64((long) this);
+        }
+
+        /// <exclude />
+        ulong IConvertible.ToUInt64(IFormatProvider provider)
+        {
+            return Convert.ToUInt64((long) this);
+        }
+
+        /// <exclude />
+        float IConvertible.ToSingle(IFormatProvider provider)
+        {
+            return Convert.ToSingle((BigInteger) this);
+        }
+
+        /// <exclude />
+        double IConvertible.ToDouble(IFormatProvider provider)
+        {
+            return Convert.ToDouble((BigInteger) this);
+        }
+
+        /// <exclude />
+        decimal IConvertible.ToDecimal(IFormatProvider provider)
+        {
+            return Convert.ToDecimal((BigInteger) this);
+        }
+
+        /// <exclude />
+        DateTime IConvertible.ToDateTime(IFormatProvider provider)
+        {
+            throw new InvalidCastException("A cast of Hex to/from DateTime is invalid.");
+        }
+
+        /// <exclude />
+        string IConvertible.ToString(IFormatProvider provider)
+        {
+            return ToString();
+        }
+
+        /// <exclude />
+        object IConvertible.ToType(Type conversionType, IFormatProvider provider)
+        {
+            return Convert.ChangeType(this, conversionType, provider);
+        }
+
+        #endregion
+
+        #region implementations for IEquatable<Hex>
+
+        /// <summary>
+        ///     Determines if two Hex objects are equal.
+        /// </summary>
+        /// <param name="obj">The other object.</param>
+        /// <returns><c>true</c> if the objects are equal, <c>false</c> otherwise.</returns>
+        public bool Equals(Hex obj)
+        {
+            return data == obj.data;
         }
 
         #endregion
