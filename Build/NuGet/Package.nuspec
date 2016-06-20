@@ -5,7 +5,7 @@
     <version>0.0.0</version>
     <authors>Scott Keith Thomas, Jr.</authors>
     <description>Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system.</description>
-    <tags>simple types basic intrinsic hex hexadecimal</tags>
+    <tags>simple type types basic intrinsic hex hexadecimal</tags>
     <iconUrl>https://raw.githubusercontent.com/skthomasjr/Types.Hexadecimal/master/Build/NuGet/Package.png</iconUrl>
     <licenseUrl>https://raw.githubusercontent.com/skthomasjr/Types.Hexadecimal/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/skthomasjr/Types.Hexadecimal</projectUrl>
