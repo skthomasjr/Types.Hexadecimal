@@ -8,3 +8,21 @@
 [![Join the chat at https://gitter.im/skthomasjr/Types.Hexadecimal](https://badges.gitter.im/skthomasjr/Types.Hexadecimal.svg)](https://gitter.im/skthomasjr/Types.Hexadecimal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system.
+
+Hex supports implicit and explicit casts to the following types:
+- Byte[] (byte[])
+- String (string)
+- Int16 (short)
+- Int32 (int)
+- Int64 (long)
+- BigInteger
+
+Hex supports add(+) and subtract(-) operation with the following types:
+- Hex
+- String (string)
+- Byte[] (byte[])
+- Byte (byte)
+- Int16 (short)
+- Int32 (int)
+- Int64 (long)
+- BigInteger
