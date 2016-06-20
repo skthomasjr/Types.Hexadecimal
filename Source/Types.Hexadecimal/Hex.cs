@@ -8,7 +8,7 @@ using System.Numerics;
 
 #endregion
 
-namespace Types.HexByte
+namespace Types.Hexadecimal
 {
     /// <summary>
     ///     Represents a static string of <see cref="HexByte" />.
@@ -22,6 +22,54 @@ namespace Types.HexByte
         #endregion
 
         #region methods and other members
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, Hex value)
+        {
+            return hex.ToBigInteger() + value.ToBigInteger();
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, byte[] value)
+        {
+            return hex + (Hex)value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, byte value)
+        {
+            return hex + (Hex)value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, string value)
+        {
+            return hex + (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, short value)
+        {
+            return hex + (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, int value)
+        {
+            return hex + (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, long value)
+        {
+            return hex + (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator +(Hex hex, BigInteger value)
+        {
+            return hex + (Hex) value;
+        }
 
         /// <exclude />
         public static explicit operator byte[](Hex value)
@@ -80,19 +128,22 @@ namespace Types.HexByte
         /// <exclude />
         public static implicit operator Hex(short value)
         {
-            return BitConverter.GetBytes(value).Reverse().ToArray();
+            var bytes = BitConverter.GetBytes(value).Reverse();
+            return TrimPadding(bytes);
         }
 
         /// <exclude />
         public static implicit operator Hex(int value)
         {
-            return BitConverter.GetBytes(value).Reverse().ToArray();
+            var bytes = BitConverter.GetBytes(value).Reverse();
+            return TrimPadding(bytes);
         }
 
         /// <exclude />
         public static implicit operator Hex(long value)
         {
-            return BitConverter.GetBytes(value).Reverse().ToArray();
+            var bytes = BitConverter.GetBytes(value).Reverse();
+            return TrimPadding(bytes);
         }
 
         /// <exclude />
@@ -113,6 +164,54 @@ namespace Types.HexByte
             };
         }
 
+        /// <exclude />
+        public static Hex operator -(Hex hex, Hex value)
+        {
+            return hex.ToBigInteger() - value.ToBigInteger();
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, byte[] value)
+        {
+            return hex - (Hex)value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, byte value)
+        {
+            return hex - (Hex)value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, string value)
+        {
+            return hex - (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, short value)
+        {
+            return hex - (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, int value)
+        {
+            return hex - (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, long value)
+        {
+            return hex - (Hex) value;
+        }
+
+        /// <exclude />
+        public static Hex operator -(Hex hex, BigInteger value)
+        {
+            return hex - (Hex) value;
+        }
+
         private static byte[] PaddedBytes(Hex hex, int targetSize)
         {
             var paddedBytes = new List<byte>((byte[]) hex);
@@ -124,6 +223,16 @@ namespace Types.HexByte
             }
 
             return paddedBytes.ToArray();
+        }
+
+        private static byte[] TrimPadding(IEnumerable<byte> bytes)
+        {
+            var byteList = bytes.ToList();
+            while (byteList.First() == 0x00)
+            {
+                byteList.RemoveAt(0);
+            }
+            return byteList.ToArray();
         }
 
         /// <summary>

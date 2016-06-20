@@ -2,10 +2,11 @@
 
 using System;
 using System.Diagnostics.Contracts;
+using System.Numerics;
 
 #endregion
 
-namespace Types.HexByte
+namespace Types.Hexadecimal
 {
     /// <summary>
     ///     Represents a <see cref="byte" /> that can be manipulated as hexadecimal.
@@ -46,7 +47,7 @@ namespace Types.HexByte
         /// <exclude />
         public static HexByte operator +(HexByte hexByte, byte value)
         {
-            return hexByte.data + value;
+            return hexByte + (HexByte) value;
         }
 
         /// <exclude />
@@ -56,15 +57,27 @@ namespace Types.HexByte
         }
 
         /// <exclude />
+        public static HexByte operator +(HexByte hexByte, short value)
+        {
+            return hexByte + (HexByte) value;
+        }
+
+        /// <exclude />
         public static HexByte operator +(HexByte hexByte, int value)
         {
-            return hexByte.data + value;
+            return hexByte + (HexByte) value;
         }
 
         /// <exclude />
         public static HexByte operator +(HexByte hexByte, long value)
         {
-            return hexByte.data - value;
+            return hexByte - (HexByte) value;
+        }
+
+        /// <exclude />
+        public static HexByte operator +(HexByte hexByte, BigInteger value)
+        {
+            return hexByte - (HexByte) value;
         }
 
         /// <exclude />
@@ -81,6 +94,12 @@ namespace Types.HexByte
 
         /// <exclude />
         public static explicit operator long(HexByte value)
+        {
+            return value.data;
+        }
+
+        /// <exclude />
+        public static explicit operator BigInteger(HexByte value)
         {
             return value.data;
         }
@@ -116,6 +135,15 @@ namespace Types.HexByte
         }
 
         /// <exclude />
+        public static implicit operator HexByte(BigInteger value)
+        {
+            if (value < 0 || value > 255)
+                throw new OverflowException("Value was either too large or too small for a HexByte.");
+
+            return new HexByte {data = (byte) value};
+        }
+
+        /// <exclude />
         public static implicit operator HexByte(string value)
         {
             if (value.Length == 0) value = "00";
@@ -138,19 +166,31 @@ namespace Types.HexByte
         /// <exclude />
         public static HexByte operator -(HexByte hexByte, byte value)
         {
-            return hexByte.data - value;
+            return hexByte - (HexByte) value;
+        }
+
+        /// <exclude />
+        public static HexByte operator -(HexByte hexByte, short value)
+        {
+            return hexByte - (HexByte) value;
         }
 
         /// <exclude />
         public static HexByte operator -(HexByte hexByte, int value)
         {
-            return hexByte.data - value;
+            return hexByte - (HexByte) value;
         }
 
         /// <exclude />
         public static HexByte operator -(HexByte hexByte, long value)
         {
-            return hexByte.data - value;
+            return hexByte - (HexByte) value;
+        }
+
+        /// <exclude />
+        public static HexByte operator -(HexByte hexByte, BigInteger value)
+        {
+            return hexByte - (HexByte) value;
         }
 
         /// <summary>
