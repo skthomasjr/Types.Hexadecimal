@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Types.Hexadecimal</id>
+    <version>0.0.0</version>
+    <authors>Scott Keith Thomas, Jr.</authors>
+    <description>Types.Hexadecimal is a library for interacting with command-line arguments.</description>
+    <tags>arguments batch cmd command-line commandline switch switches</tags>
+    <iconUrl>https://raw.githubusercontent.com/skthomasjr/Types.Hexadecimal/master/Build/NuGet/Package.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/skthomasjr/Types.Hexadecimal/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/skthomasjr/Types.Hexadecimal</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Numerics" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
