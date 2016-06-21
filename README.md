@@ -22,6 +22,7 @@ HexByte hexByte = "af"; // 0xaf
 HexByte hexByte = 175; // 0xaf
 ```
 HexByte supports add(+) and subtract(-) operation with the following types:
+- HexByte
 - String (string)
 - Byte (byte)
 - Int16 (short)
