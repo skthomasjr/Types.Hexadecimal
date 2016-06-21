@@ -10,8 +10,8 @@
 Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system. Two types are provided to support hexadecimal operations HexByte which represents a single byte value and Hex which represents an arbitrarily large signed integer made up of a collection of HexBytes. HexByte is represented with a two character hex string in the hex range of "00" to "ff". Hex is represented as an even lengthed string such as "0a2f4b998e" where every two characters is a HexByte. 
 
 HexByte supports implicit and explicit casts to the following types:
-- Byte (byte)
 - String (string)
+- Byte (byte)
 - Int16 (short)
 - Int32 (int)
 - Int64 (long)
@@ -20,10 +20,10 @@ HexByte supports implicit and explicit casts to the following types:
 HexByte hexByte = "af"; // 0xaf
 // or
 HexByte hexByte = 175; // 0xaf
-```
+'''
 HexByte supports add(+) and subtract(-) operation with the following types:
-- Byte (byte)
 - String (string)
+- Byte (byte)
 - Int16 (short)
 - Int32 (int)
 - Int64 (long)
@@ -34,8 +34,8 @@ var hexByte = (HexByte)"af" - 1; // 0xae
 var hexByte = (HexByte)175 + 1; // 0xb0
 ```
 Hex supports implicit and explicit casts to the following types:
-- Byte\[\] (byte\[\])
 - String (string)
+- Byte\[\] (byte\[\])
 - Int16 (short)
 - Int32 (int)
 - Int64 (long)
