@@ -20,7 +20,7 @@ HexByte supports implicit and explicit casts to the following types:
 HexByte hexByte = "af"; // 0xaf
 // or
 HexByte hexByte = 175; // 0xaf
-'''
+```
 HexByte supports add(+) and subtract(-) operation with the following types:
 - String (string)
 - Byte (byte)
