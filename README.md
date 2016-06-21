@@ -7,7 +7,7 @@
 [![Author](https://img.shields.io/badge/author-Scott%20K.%20Thomas%2C%20Jr.-blue.svg?maxAge=2592000)](https://www.linkedin.com/in/skthomasjr)
 [![Join the chat at https://gitter.im/skthomasjr/Types.Hexadecimal](https://badges.gitter.im/skthomasjr/Types.Hexadecimal.svg)](https://gitter.im/skthomasjr/Types.Hexadecimal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system. Two type are provided to support hexadecimal operations HexByte which represents a single byte value and Hex which represents an arbitrarily large signed integer made up of a collection of HexBytes. HexByte is represented with a two character hex string in the hex range of "00" to "ff". Hex is represented as an even lengthed string such as "0a2f4b998e" where every two characters is a HexByte. 
+Types.Hexadecimal is a library providing simple types and extensions to support hexadecimal (hex) numeral system. Two types are provided to support hexadecimal operations HexByte which represents a single byte value and Hex which represents an arbitrarily large signed integer made up of a collection of HexBytes. HexByte is represented with a two character hex string in the hex range of "00" to "ff". Hex is represented as an even lengthed string such as "0a2f4b998e" where every two characters is a HexByte. 
 
 HexByte supports implicit and explicit casts to the following types:
 - Byte (byte)
