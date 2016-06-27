@@ -212,6 +212,18 @@ namespace Types.Hexadecimal
             return hex - (Hex) value;
         }
 
+        /// <exclude />
+        public static bool operator ==(Hex hex1, Hex hex2)
+        {
+            return ((IComparable)hex1).Equals(hex2);
+        }
+
+        /// <exclude />
+        public static bool operator !=(Hex hex1, Hex hex2)
+        {
+            return !((IComparable)hex1).Equals(hex2);
+        }
+
         private static byte[] PaddedBytes(Hex hex, int targetSize)
         {
             var paddedBytes = new List<byte>((byte[]) hex);
